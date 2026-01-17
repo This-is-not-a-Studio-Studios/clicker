@@ -40,10 +40,8 @@ public class UIController : MonoBehaviour
 
         for (int i = 0; i < GameManager.Instance.userList.Length;  i++)
         {
-            string username = GameManager.Instance.userList[i];
-
             GameObject newUser = GameObject.Instantiate(this._userPrefab, this._pcUserListPanel);
-            newUser.GetComponent<UserPanel>().InitUserPanel(username);
+            newUser.GetComponent<UserPanel>().InitUserPanel(GameManager.Instance.userList[i]);
 
             if (i >= GameManager.Instance.userList.Length - 1) break;
 
